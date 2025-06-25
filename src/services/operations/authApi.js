@@ -54,7 +54,7 @@ export function sendotp(email, navigate) {
         dispatch(setLoading(true));
         try {
             const response = await apiConnector("POST", SENDOTP_API, {
-                email, checkUserPresent: true
+                email, checkUserPresent: false
             })
             console.log("SENDOTP API RESPONSE...", response);
             if (!response.data.success) {
